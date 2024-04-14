@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/Components/my_Button.dart';
+import 'package:project01_riz_todolist/Components/my_textfiled.dart';
+import 'package:project01_riz_todolist/Components/square_images.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  // Controller
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  LoginPage({super.key});
+
+  void SignInUser() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       body: SafeArea(
           child: Center(
               child: Column(
@@ -18,28 +28,35 @@ class LoginPage extends StatelessWidget {
             Icons.lock,
             size: 100,
           ),
-
           const SizedBox(
-            height: 20,
+            height: 50,
           ),
+
           // Welcome back,you've been missed!
           Text(
             "Welcome back,you've been missed!",
             style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
           ),
-
-          // Username
-          TextField(),
           const SizedBox(
             height: 20,
           ),
-
-          // password
-          TextField(),
+          // Username
+          MyTextFiled(
+              controller: _usernameController,
+              hintText: "Username",
+              obsecureText: false),
           const SizedBox(
-            height: 16,
+            height: 10,
           ),
 
+          // password
+          MyTextFiled(
+              controller: _passwordController,
+              hintText: "Password",
+              obsecureText: true),
+          const SizedBox(
+            height: 8,
+          ),
           // forgot password
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -58,7 +75,10 @@ class LoginPage extends StatelessWidget {
           ),
 
           // Sign in Button
-
+          MyButton(
+            TextButton: "Sign In",
+            onTap: SignInUser,
+          ),
           const SizedBox(
             height: 50,
           ),
@@ -66,9 +86,11 @@ class LoginPage extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Divider(
-                color: Colors.grey.shade400,
-                thickness: 0.5,
+              Expanded(
+                child: Divider(
+                  color: Colors.grey.shade700,
+                  thickness: 0.5,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -77,17 +99,32 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(color: Colors.grey.shade700),
                 ),
               ),
-              Divider(
-                color: Colors.grey.shade400,
-                thickness: 0.5,
+              Expanded(
+                child: Divider(
+                  color: Colors.grey.shade700,
+                  thickness: 0.5,
+                ),
               ),
             ],
           ),
           const SizedBox(
             height: 50,
           ),
-          // google and Apple sign in icon
 
+          // google and Apple sign in icon
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SquareTile(imagePath: "lib/images/google.png"),
+              SizedBox(
+                width: 20,
+              ),
+              SquareTile(imagePath: "lib/images/apple.png"),
+            ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
           // not a member register now!
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
