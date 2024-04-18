@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project01_riz_todolist/Components/my_Button.dart';
-import 'package:project01_riz_todolist/Components/my_textfiled.dart';
-import 'package:project01_riz_todolist/Components/square_images.dart';
+import 'package:project01_riz_todolist/screens/bottom_navbar.dart';
+import 'package:project01_riz_todolist/widgets/my_Button.dart';
+import 'package:project01_riz_todolist/widgets/my_textfiled.dart';
+import 'package:project01_riz_todolist/widgets/square_images.dart';
 
 class LoginPage extends StatelessWidget {
   // Controller
@@ -9,8 +10,6 @@ class LoginPage extends StatelessWidget {
   final _passwordController = TextEditingController();
 
   LoginPage({super.key});
-
-  void SignInUser() {}
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +76,14 @@ class LoginPage extends StatelessWidget {
           // Sign in Button
           MyButton(
             TextButton: "Sign In",
-            onTap: SignInUser,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        BottomNavbar()), // Tambahkan tanda kurung kurawal di sini
+              );
+            },
           ),
           const SizedBox(
             height: 50,
