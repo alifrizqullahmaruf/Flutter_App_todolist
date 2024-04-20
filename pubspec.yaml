@@ -29,9 +29,11 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
-  # firebase_core: ^2.30.0
+  firebase_core: ^2.30.0
+  intl: ^0.17.0
   flutter:
     sdk: flutter
+  uuid: ^4.4.0
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -39,7 +41,8 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: 2.0.0
+
   flutter_test:
     sdk: flutter
 

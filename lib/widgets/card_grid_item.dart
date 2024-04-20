@@ -15,7 +15,7 @@ class CardGridItems extends StatelessWidget {
       splashColor: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(16),
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             gradient: LinearGradient(
@@ -27,10 +27,24 @@ class CardGridItems extends StatelessWidget {
               end: Alignment.bottomRight,
             )),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(listItem.title),
-            Spacer(),
-            Text(listItem.priority.toString()),
+            Text(
+              listItem.title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+            ),
+            const Spacer(),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.white30,
+              ),
+              child: Text(
+                listItem.priority.toString(),
+                style: const TextStyle(fontSize: 16),
+              ),
+            ),
           ],
         ),
       ),

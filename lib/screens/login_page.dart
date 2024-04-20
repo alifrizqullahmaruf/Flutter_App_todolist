@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) =>
-                        BottomNavbar()), // Tambahkan tanda kurung kurawal di sini
+                        const BottomNavbar()), // Tambahkan tanda kurung kurawal di sini
               );
             },
           ),

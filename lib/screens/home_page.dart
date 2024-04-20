@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project01_riz_todolist/data/dummy_data.dart';
 import 'package:project01_riz_todolist/widgets/big_card.dart';
 import 'package:project01_riz_todolist/widgets/card_grid_item.dart';
+import 'package:project01_riz_todolist/widgets/headline_one.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home page"),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))],
+        title: const HeadlineOne(text: "Home page", colorText: Colors.black),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
         automaticallyImplyLeading: false,
       ),
       body: SafeArea(
@@ -27,15 +28,15 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Card panjang
-                Row(
+                const Row(
                   children: [BigCard()],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 // Heading
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Text(
                     "My Task",
                     style: TextStyle(
@@ -44,14 +45,14 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 // Grid view
                 GridView(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 1,
                     crossAxisSpacing: 16,
