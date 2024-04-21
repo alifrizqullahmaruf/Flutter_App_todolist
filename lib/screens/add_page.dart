@@ -34,6 +34,9 @@ class _AddPageState extends State<AddPage> {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          SizedBox(
+            height: 20,
+          ),
           // Task title
           Padding(
             padding: const EdgeInsets.symmetric(
@@ -47,7 +50,6 @@ class _AddPageState extends State<AddPage> {
               controller: _titleController,
               hintText: "e.g. Project FLutter",
               obsecureText: false),
-
           // Priority and date
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 8),

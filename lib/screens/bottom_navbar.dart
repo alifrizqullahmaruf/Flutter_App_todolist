@@ -29,28 +29,38 @@ class _BottomNavbarState extends State<BottomNavbar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
+      bottomNavigationBar: Container(
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: ClipRRect(
+          // Menambahkan ClipRRect di sini
+          borderRadius: BorderRadius.circular(16), // Atur border radius di sini
+          child: BottomNavigationBar(
+            onTap: _onItemTapped,
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.add),
+                label: "Add",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: "Profile",
+              ),
+            ],
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.blue.shade300,
+            showSelectedLabels: true,
+            showUnselectedLabels: false,
+            backgroundColor: Colors.blue.shade700,
+            currentIndex: _selectedIndex,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: "Add",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
-          ),
-        ],
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.blue.shade300,
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        backgroundColor: Colors.blue.shade700,
-        currentIndex: _selectedIndex,
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/screens/login_page.dart';
 import 'package:project01_riz_todolist/widgets/card_profile.dart';
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
 import 'package:project01_riz_todolist/widgets/my_Button.dart';
@@ -20,6 +21,9 @@ class ProfilePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 32,
+              ),
               // Foto
               Center(
                 child: ClipOval(
@@ -51,11 +55,20 @@ class ProfilePage extends StatelessWidget {
               // logout
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24),
-                child: MyButton(TextButton: "Logout", onTap: () {}),
+                child: MyButton(
+                    TextButton: "Logout",
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
+                    }),
               ),
               // edit profile
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24),
+                padding: const EdgeInsets.symmetric(vertical: 0),
                 child:
                     MyButtonOutline(TextButton: "Edit Profile", onTap: () {}),
               ),

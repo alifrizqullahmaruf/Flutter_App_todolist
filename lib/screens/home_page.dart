@@ -17,7 +17,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const HeadlineOne(text: "Home page", colorText: Colors.black),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu),
+            color: Colors.black,
+          )
+        ],
         automaticallyImplyLeading: false,
       ),
       body: SafeArea(
