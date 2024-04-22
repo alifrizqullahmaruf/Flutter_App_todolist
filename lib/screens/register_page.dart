@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project01_riz_todolist/screens/bottom_navbar.dart';
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
 import 'package:project01_riz_todolist/widgets/my_Button.dart';
-import 'package:project01_riz_todolist/widgets/my_button_outline.dart';
 import 'package:project01_riz_todolist/widgets/square_images.dart';
 
 class RegisterPage extends StatelessWidget {

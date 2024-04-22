@@ -12,19 +12,57 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  void _openMenu(BuildContext context) {
+    Scaffold.of(context).openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const HeadlineOne(text: "Home page", colorText: Colors.black),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.menu),
-            color: Colors.black,
-          )
-        ],
         automaticallyImplyLeading: false,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () => _openMenu(context),
+            );
+          },
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text('George Michaelis'), // Ganti dengan nama Anda
+              accountEmail:
+                  Text('george.michaelis@gmail.com'), // Ganti dengan email Anda
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage(
+                    'images/profile.jpg'), // Ganti dengan foto profil Anda
+                backgroundColor: Colors.white,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.pink, // Atur warna latar belakang drawer
+                image: DecorationImage(
+                  image: AssetImage(
+                      'images/back.jpg'), // Ganti dengan gambar latar belakang Anda
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.file_upload),
+              title: Text('Upload'),
+              onTap: () {
+                print('Upload tapped');
+              },
+            ),
+            // Tambahkan item-item drawer lainnya di sini
+          ],
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
