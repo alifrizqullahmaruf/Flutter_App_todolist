@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 
 class SquareTile extends StatelessWidget {
   final String imagePath;
@@ -14,7 +15,7 @@ class SquareTile extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(16),
-        color: Colors.grey[200],
+        color: MyColor.color30,
       ),
       child: Image.asset(
         imagePath,

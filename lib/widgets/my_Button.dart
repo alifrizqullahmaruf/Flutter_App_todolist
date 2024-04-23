@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 
 class MyButton extends StatelessWidget {
   // TextButton
@@ -19,7 +20,7 @@ class MyButton extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                color: Colors.black,
+                color: MyColor.color10,
               ),
               child: Center(
                 child: Text(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 
 class MyTextFiled extends StatelessWidget {
   final controller;
@@ -22,13 +23,13 @@ class MyTextFiled extends StatelessWidget {
         decoration: InputDecoration(
             border: InputBorder.none,
             enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
+              borderSide: BorderSide(color: MyColor.color60),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey.shade400),
+              borderSide: BorderSide(color: MyColor.color60),
             ),
             hintText: hintText,
-            fillColor: Colors.grey.shade200,
+            fillColor: MyColor.color30,
             filled: true),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 import 'package:project01_riz_todolist/screens/login_page.dart';
 import 'package:project01_riz_todolist/widgets/card_profile.dart';
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
@@ -11,6 +12,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.color60,
       appBar: AppBar(
         title: const HeadlineOne(
             text: "Profile Navigation", colorText: Colors.black),

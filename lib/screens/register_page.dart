@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 import 'package:project01_riz_todolist/screens/bottom_navbar.dart';
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
 import 'package:project01_riz_todolist/widgets/my_Button.dart';
+import 'package:project01_riz_todolist/widgets/my_textfiled.dart';
 import 'package:project01_riz_todolist/widgets/square_images.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({Key? key})
-      : super(key: key); // Perbaiki sintaks super.key
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  RegisterPage({
+    super.key,
+  }); // Perbaiki sintaks super.key
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.color60,
       appBar: AppBar(
         title: const HeadlineOne(text: "Register", colorText: Colors.black),
         automaticallyImplyLeading: true,
@@ -19,7 +27,7 @@ class RegisterPage extends StatelessWidget {
         child: SafeArea(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               child: Column(
                 children: [
                   const SizedBox(
@@ -33,39 +41,31 @@ class RegisterPage extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Name",
-                    ),
-                  ),
+                  MyTextFiled(
+                      controller: _nameController,
+                      hintText: "Name",
+                      obsecureText: false),
                   SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Email",
-                    ),
-                  ),
+                  MyTextFiled(
+                      controller: _emailController,
+                      hintText: "Email",
+                      obsecureText: false),
                   SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Password",
-                    ),
-                  ),
+                  MyTextFiled(
+                      controller: _passwordController,
+                      hintText: "Password",
+                      obsecureText: true),
                   SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Confirm Password",
-                    ),
-                  ),
+                  MyTextFiled(
+                      controller: _passwordController,
+                      hintText: "Confirm Password",
+                      obsecureText: true),
                   const SizedBox(
                     height: 50,
                   ),

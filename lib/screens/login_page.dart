@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 import 'package:project01_riz_todolist/screens/bottom_navbar.dart';
 import 'package:project01_riz_todolist/screens/register_page.dart';
 import 'package:project01_riz_todolist/widgets/my_Button.dart';
@@ -16,7 +17,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: MyColor.color60,
       body: SingleChildScrollView(
         child: SafeArea(
             child: Center(
@@ -67,7 +68,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Text(
                     "Forgot password",
-                    style: TextStyle(color: Colors.grey.shade600),
+                    style: TextStyle(color: MyColor.color10),
                   )
                 ],
               ),
@@ -98,7 +99,7 @@ class LoginPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            const RegisterPage()), // Tambahkan tanda kurung kurawal di sini
+                            RegisterPage()), // Tambahkan tanda kurung kurawal di sini
                   );
                 }),
             const SizedBox(
@@ -161,7 +162,7 @@ class LoginPage extends StatelessWidget {
                 const Text(
                   "Register now!",
                   style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.bold),
+                      color: MyColor.color10, fontWeight: FontWeight.bold),
                 )
               ],
             ),

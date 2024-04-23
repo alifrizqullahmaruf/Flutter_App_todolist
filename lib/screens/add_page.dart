@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 import 'package:project01_riz_todolist/models/list.dart'; // Pastikan impor model Anda
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
 import 'package:project01_riz_todolist/widgets/headline_three.dart';
@@ -27,6 +28,7 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.color60,
       appBar: AppBar(
         title: const HeadlineOne(text: "Add Task", colorText: Colors.black),
         automaticallyImplyLeading: false,

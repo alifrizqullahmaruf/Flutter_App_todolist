@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project01_riz_todolist/data/dummy_data.dart';
+import 'package:project01_riz_todolist/data/my_color.dart';
 import 'package:project01_riz_todolist/widgets/big_card.dart';
 import 'package:project01_riz_todolist/widgets/card_grid_item.dart';
 import 'package:project01_riz_todolist/widgets/headline_one.dart';
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyColor.color60,
       appBar: AppBar(
         title: const HeadlineOne(text: "Home page", colorText: Colors.black),
         automaticallyImplyLeading: false,
@@ -36,16 +38,22 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text('George Michaelis'), // Ganti dengan nama Anda
-              accountEmail:
-                  Text('george.michaelis@gmail.com'), // Ganti dengan email Anda
+              accountName: Text(
+                'George Michaelis',
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w700),
+              ), // Ganti dengan nama Anda
+              accountEmail: Text(
+                'george.michaelis@gmail.com',
+                style: TextStyle(color: Colors.black),
+              ), // Ganti dengan email Anda
               currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage(
-                    'images/profile.jpg'), // Ganti dengan foto profil Anda
-                backgroundColor: Colors.white,
+                backgroundImage: NetworkImage(
+                    "https://i.pinimg.com/236x/f4/31/70/f43170dfd9812faad7256a7ed6a5caed.jpg"), // Ganti dengan foto profil Anda
+                backgroundColor: MyColor.color60,
               ),
               decoration: BoxDecoration(
-                color: Colors.pink, // Atur warna latar belakang drawer
+                color: MyColor.color30, // Atur warna latar belakang drawer
                 image: DecorationImage(
                   image: AssetImage(
                       'images/back.jpg'), // Ganti dengan gambar latar belakang Anda
