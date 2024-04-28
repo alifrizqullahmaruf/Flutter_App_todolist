@@ -45,6 +45,7 @@ class LoginPage extends StatelessWidget {
             ),
             // Username
             MyTextFiled(
+              valueText: "Please Enter Username",
                 controller: _usernameController,
                 hintText: "Username",
                 obsecureText: false),
@@ -54,6 +55,7 @@ class LoginPage extends StatelessWidget {
 
             // password
             MyTextFiled(
+              valueText: "Please Enter Password",
                 controller: _passwordController,
                 hintText: "Password",
                 obsecureText: true),

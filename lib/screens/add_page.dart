@@ -50,6 +50,7 @@ class _AddPageState extends State<AddPage> {
               height: 20,
             ),
             MyTextFiled(
+              valueText: "Please Enter Title",
                 controller: _titleController,
                 hintText: "e.g. Project FLutter",
                 obsecureText: false),
@@ -129,6 +130,7 @@ class _AddPageState extends State<AddPage> {
               height: 20,
             ),
             MyTextFiled(
+              valueText: "Please Enter some Note",
               controller: _notesController,
               hintText: "List of the equipments",
               obsecureText: false,

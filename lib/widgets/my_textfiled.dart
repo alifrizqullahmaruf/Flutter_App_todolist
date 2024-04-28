@@ -5,19 +5,26 @@ class MyTextFiled extends StatelessWidget {
   final controller;
   final String hintText;
   final bool obsecureText;
+  final String valueText;
 
   const MyTextFiled({
     super.key,
     required this.controller,
     required this.hintText,
     required this.obsecureText,
+    required this.valueText,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return valueText;
+          }
+        },
         controller: controller,
         obscureText: obsecureText,
         decoration: InputDecoration(
